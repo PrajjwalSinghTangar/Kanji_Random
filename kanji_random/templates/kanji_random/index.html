@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <link href="{% static 'css/index.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="title-container">
+                <h1>KANJI OF THE DAY!</h1>
+            </div>
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        {{kanji.kanji}}
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>{{kanji.meaning}}</h1>
+                        <p>Story to remember kanji:</p>
+                        <p>{{kanji.story}}</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+                <a href="{% url 'random' %}">
+                    <div class="button-container">
+                        <div class="box-1">
+                            <div class="btn btn-one">
+                            <button type="submit" style="background-color:white; border:none;"><span>Easy? Next!</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+        </div>
+    </body>
+</html>
